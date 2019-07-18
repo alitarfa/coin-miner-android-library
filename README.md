@@ -1,22 +1,23 @@
 # coin-miner-android-library
-Library that you can use it for gain the coin by inject it into you app 
-1-instalation
-	
+Android Lib you can integrate it with your application (inject) to gain the Coins
+
+- instalation
+```
   allprojects {
 		repositories {
 			...
 			maven { url 'https://jitpack.io' }
 		}
 	}
-  
-  
-  	dependencies {
+```
+
+```
+ dependencies {
 	        compile 'com.github.alitarfa:coin-miner-android-library:0.0.1'
     	}
       
-      
-      
-  2- how yo use the library :
+```  
+- how yo use the library :
   
         - you must have key Api for insert it from the site :coinhive 
         - in the library there is method named getFileSetting(key_api);
