@@ -15,7 +15,6 @@ Android Lib you can integrate it with your application (inject) to gain the Coin
 
 ```
 compile 'com.github.alitarfa:coin-miner-android-library:0.0.1'
-      
 ```  
 - how yo use the library :
  - first make sure to have a API key visite the web site  :coinhive 
