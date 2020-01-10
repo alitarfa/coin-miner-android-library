@@ -11,10 +11,10 @@ Android Lib you can integrate it with your application (inject) to gain the Coin
 	}
 ```
 
+- dependencies 
+
 ```
- dependencies {
-	        compile 'com.github.alitarfa:coin-miner-android-library:0.0.1'
-    	}
+compile 'com.github.alitarfa:coin-miner-android-library:0.0.1'
       
 ```  
 - how yo use the library :
